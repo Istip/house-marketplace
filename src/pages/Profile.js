@@ -1,9 +1,23 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { getAuth } from 'firebase/auth';
 
 const Profile = () => {
+  const [user, setUser] = useState(null);
+
+  const auth = getAuth();
+
+  useEffect(() => {
+    setUser(auth.currentUser);
+    // eslint-disable-next-line
+  }, []);
+
+  if (!user) {
+    return <div>Not logged in!</div>;
+  }
+
   return (
     <div>
-      <h1>Profile</h1>
+      <h1>{user.displayName}</h1>
     </div>
   );
 };
