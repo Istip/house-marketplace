@@ -11,6 +11,7 @@ import { ReactComponent as ArrowRightIcon } from '../assets/svg/keyboardArrowRig
 import visibilityIcon from '../assets/svg/visibilityIcon.svg';
 import { db } from '../firebase.config';
 import { toast } from 'react-toastify';
+import OAuth from '../components/OAuth';
 
 const SignUp = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -116,7 +117,8 @@ const SignUp = () => {
             </div>
           </form>
 
-          {/* GOOGLE auth component */}
+          <OAuth />
+
           <Link to="/sign-in" className="registerLink">
             Sign In Instead
           </Link>
