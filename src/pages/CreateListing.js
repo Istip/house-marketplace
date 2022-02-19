@@ -119,7 +119,7 @@ function CreateListing() {
     const storeImage = async (image) => {
       return new Promise((resolve, reject) => {
         const storage = getStorage();
-        const fileName = `${auth.currentUser.uid}-${image.name}-${uuidv4()}`;
+        const fileName = `${auth.currentUser.uid}-${uuidv4()}-${image.name}}`;
 
         const storageRef = ref(storage, 'images/' + fileName);
 
@@ -255,7 +255,7 @@ function CreateListing() {
             required
           />
 
-          <div className="formRooms">
+          <div className="formRooms flex">
             <div>
               <label className="formLabel">Bedrooms</label>
               <input
@@ -347,7 +347,7 @@ function CreateListing() {
           />
 
           {!geolocationEnabled && (
-            <div className="formLatLng">
+            <div className="formLatLng flex">
               <div>
                 <label className="formLabel">Latitude</label>
                 <input
