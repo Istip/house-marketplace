@@ -87,6 +87,8 @@ const Profile = () => {
     setFormData({ ...formData, [e.target.id]: e.target.value });
   };
 
+  const onEdit = (listingId) => navigate(`/edit-listing/${listingId}`);
+
   const onDelete = async (listingId) => {
     if (window.confirm('Are you sure you want to delete?')) {
       await deleteDoc(doc(db, 'listings', listingId));
@@ -164,6 +166,7 @@ const Profile = () => {
                   listing={listing.data}
                   id={listing.id}
                   onDelete={() => onDelete(listing.id)}
+                  onEdit={() => onEdit(listing.id)}
                 />
               ))}
             </ul>
