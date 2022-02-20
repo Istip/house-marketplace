@@ -26,12 +26,16 @@ const ListingItem = ({ listing, id, onDelete }) => {
           <div className="categoryListingInfoDiv">
             <img src={bedIcon} alt="bed" />
             <p className="categoryListingInfoText">
-              {listing.bedrooms > 1 ? 'Bedrooms' : '1 Bedroom'}
+              {listing.bedrooms > 1
+                ? `${listing.bedrooms} Bedrooms`
+                : '1 Bedroom'}
             </p>
 
             <img src={bathtubIcon} alt="bath" />
             <p className="categoryListingInfoText">
-              {listing.bathrooms > 1 ? 'Bathrooms' : '1 Bathroom'}
+              {listing.bathrooms > 1
+                ? `${listing.bathrooms} Bathroom`
+                : '1 Bathroom'}
             </p>
           </div>
         </div>
